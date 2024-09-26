@@ -73,6 +73,7 @@ def classify_graph():
     ruta_carpeta = f'./graficas/{saveFile}'
     new_folder_path = ruta_carpeta + comportamiento 
     if not os.path.exists(new_folder_path):
+        move_csv()
         # Renombrar la carpeta
         os.rename(ruta_carpeta, new_folder_path)
     else:
@@ -103,7 +104,6 @@ def save_plot():
     
     # Guardar la gráfica actual
     plt.savefig(graph_path, format='png')
-    move_csv()
     classify_graph()
 
 # Crear la ventana principal
